@@ -21,8 +21,9 @@ const (
 	iconSize     = 50
 	bulletRadius = 5
 	moveSpeed    = 5
-	background   = "deftones.png"
-	icon         = "icon.png"
+	background   = ""
+	icon         = "./public/img/icon.png"
+	patterns     = "./public/json/patterns.json"
 )
 
 var tickCount int
@@ -131,7 +132,7 @@ func (g *Game) initGame() {
 	}
 
 	// Cargar patrones de balas
-	g.patterns, err = loadPatterns("patterns.json")
+	g.patterns, err = loadPatterns(patterns)
 	if err != nil {
 		log.Fatal(err)
 	}
